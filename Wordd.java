@@ -1,0 +1,177 @@
+import java.util.Scanner;
+class Wordd
+{
+	public static void main(String args[])
+	{
+		/*{'f','a','c','i'}
+		  {'o','b','q','p'}
+		  {'a','n','o','p'},
+		  {'m','a','s','s'}*/
+		char array[][]=new char[][]{{'f','a','c','i'},{'o','b','q','p'},{'a','n','o','p'},{'m','a','s','s'}};
+		System.out.println("Enter the word to check");
+		Scanner s=new Scanner(System.in);
+		String search=s.next();
+		String word="";
+		int count=0,cons=0,w=0,i,j,x;
+		for(x=0;x<array.length;x++)
+        {
+			i=x;
+			j=0;
+				while(i>=0)
+				{										  
+					word=word+array[i][j];
+					System.out.println(word);
+					i=i-1;
+					j=j+1;
+					if(search.equals(word))
+					{ 
+					count++;
+					}
+					if(j==0)
+					word="";
+				} 
+				word="";
+			System.out.println();
+		}
+		for(x=1;x<=array[0].length-1;x++)
+        {
+		   j=x;
+		   i=array.length-1;
+			   while(j<=array[0].length-1)
+			   {
+				word=word+array[i][j];
+						if(word.equals(search))
+						{
+						  count++;	
+						}
+				System.out.println(word);
+				i=i-1;
+				j=j+1; 
+					word="";
+			   }  
+		    word="";
+			System.out.println();
+        } 
+		 for(x=0;x<=array[0].length-1;x++)
+		{
+			i=0;
+			j=x;
+				while(j>=0 &&i<=array.length-1)
+				{
+				word=word+array[i][j];
+					if(word.equals(search))
+					{
+					  count++;	
+					}
+						System.out.print(array[i][j]);
+					if(i==0)
+					{	word="";
+					}
+						i=i+1;
+						j=j-1;
+						
+				} 
+			System.out.println();                 
+		}
+                    
+		for(x=1;x<array.length;x++)
+		{
+		   j=array[0].length-1;
+		   i=x;
+		   while(i<=array.length-1)
+		   {
+			   word=word+array[i][j];
+				if(word.equals(search))
+				{
+				  count++;	
+				}
+				   System.out.print(array[i][j]);
+					i=i+1;
+					j=j-1; 
+					if(i==0)
+					word="";
+		   } 
+			System.out.println(); 
+		} 
+
+		
+		for(x=array[0].length-1;x>=0;x--)
+		{
+		   j=x;
+		   i=0;
+		   while(j<=array[0].length-1)
+		   {
+			   word=word+array[i][j];
+				if(word.equals(search))
+				{
+				  count++;	
+				}
+				   System.out.print(array[i][j]);
+					i=i+1;
+					j=j+1; 
+					if(i==0)
+					word="";
+		   } 
+			System.out.println(); 
+		}
+		for(x=1;x<=array.length-1;x++)
+		{
+		   i=x;
+		   j=0;
+		   while(i<=array.length-1)
+		   {
+			   word=word+array[i][j];
+				if(word.equals(search))
+				{
+				  count++;	
+				}
+				   System.out.print(array[i][j]);
+					i=i+1;
+					j=j+1; 
+					if(j==0)
+					word="";
+		   } 
+			System.out.println(); 
+		}
+	for(x=0;x<=array.length-1;x++)
+		{
+		   i=x;
+		   j=array[0].length-1;
+		   while(i>=0)
+		   {
+			   word=word+array[i][j];
+				if(word.equals(search))
+				{
+				  count++;	
+				}
+				   System.out.print(array[i][j]);
+					i=i-1;
+					j=j-1; 
+					if(j==0)
+					word="";
+		   } 
+			System.out.println(); 
+		}
+		for(x=array[0].length-2;x>=0;x--)
+		{
+		   j=x;
+		   i=array[0].length-1;
+		   while(j>=0)
+		   {
+			   word=word+array[i][j];
+				if(word.equals(search))
+				{
+				  count++;	
+				}
+				   System.out.print(array[i][j]);
+					i=i-1;
+					j=j-1; 
+					if(i==0)
+					word="";
+		   } 
+			System.out.println(); 
+		}
+		System.out.println(count);
+		
+	}
+}	
